@@ -57,12 +57,12 @@ namespace FontAwesome5.Extensions
         /// <summary>
         /// Get the SVG path of an icon
         /// </summary>
-        public static bool GetDuotoneSvg(this EFontAwesomeIcon icon, out string path1, out string path2, out double opacity2,
+        public static bool GetDuotoneSvg(this EFontAwesomeIcon icon, out string path1, out string path2, out double opacity1,
                                         out int width, out int height)
         {
             path1 = string.Empty;
             path2 = string.Empty;
-            opacity2 = 1.0f;
+            opacity1 = 1.0f;
             width = -1;
             height = -1;
 
@@ -73,7 +73,7 @@ namespace FontAwesome5.Extensions
 
             path1 = svgInfo.Path1;
             path2 = svgInfo.Path2;
-            opacity2 = svgInfo.Opacity2;
+            opacity1 = svgInfo.Opacity1;
             width = svgInfo.Width;
             height = svgInfo.Height;
 

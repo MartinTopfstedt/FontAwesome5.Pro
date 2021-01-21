@@ -287,5 +287,8 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 
+# ignore EFontAwesomeIcons
+**/EFontAwesomeIcon.cs
+
 # Excludes
 !/bin
