@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFrameworks>net40;net462;net472;netcoreapp3.0;netcoreapp3.1</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>false</DelaySign>
+    <AssemblyName>FontAwesome5.Net</AssemblyName>
+    <RootNamespace>FontAwesome5</RootNamespace>
+     <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DocumentationFile>$(OutDir)\FontAwesome5.Net.xml</DocumentationFile>
+    <Authors>Martin Topfstedt</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Copyright>Copyright © Codinion 2018</Copyright>
+    <Company>Codinion</Company>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="..\..\Font-Awesome\otfs\Font Awesome 5 Brands-Regular-400.otf" Link="Fonts\Font Awesome 5 Brands-Regular-400.otf" />
+    <Resource Include="..\..\Font-Awesome\otfs\Font Awesome 5 Pro-Regular-400.otf" Link="Fonts\Font Awesome 5 Pro-Regular-400.otf" />
+    <Resource Include="..\..\Font-Awesome\otfs\Font Awesome 5 Pro-Solid-900.otf" Link="Fonts\Font Awesome 5 Pro-Solid-900.otf" />
+    <Resource Include="..\..\Font-Awesome\otfs\Font Awesome 5 Pro-Light-300.otf" Link="Fonts\Font Awesome 5 Pro-Light-300.otf" />
+    <Resource Include="..\..\Font-Awesome\otfs\Font Awesome 5 Duotone-Solid-900.otf" Link="Fonts\Font Awesome 5 Duotone-Solid-900.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FontAwesome5\FontAwesome5.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Fonts\" />
+  </ItemGroup>
+
+  <Import Project="..\FontAwesome.Shared\FontAwesome.Shared.projitems" Label="Shared" />
+
+</Project>
