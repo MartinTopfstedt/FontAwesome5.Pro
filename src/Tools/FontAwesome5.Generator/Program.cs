@@ -76,7 +76,7 @@ namespace FontAwesome5.Generator
             {
                 foreach (var kvp in fa.Icons.Where(i => i.Value.styles.Contains(style.ToString().ToLower())))
                 {
-                    WriteSummary(kvp.Value.label);
+                    WriteSummary(kvp.Value.label.Replace("&", "&amp;"));
                     WriteLine("///<see href=\"http://fontawesome.com/icons/{0}?style={1}\" />", kvp.Key, style.ToString().ToLower());
                     WriteLine("[FontAwesomeInformation(\"{0}\", EFontAwesomeStyle.{1}, 0x{2})]", kvp.Value.label, style.ToString(), kvp.Value.unicode);
 
