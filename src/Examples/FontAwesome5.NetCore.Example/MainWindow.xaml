@@ -11,7 +11,13 @@
         <fa5:LabelConverter x:Key="LabelConverter"/>
         <fa5:StyleConverter x:Key="StyleConverter"/>
         <fa5:ImageSourceConverter x:Key="ImageSourceConverter"/>
+        <fa5:DrawingConverter x:Key="DrawingConverter"/>
+        <fa5:IsDuotoneIconConverter x:Key="IsDuotoneIconConverter"/>
     </Window.Resources>
+    <Window.Icon>
+        <DrawingImage Drawing="{Binding SelectedIcon, Converter={StaticResource DrawingConverter}}">
+        </DrawingImage>
+    </Window.Icon>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>

@@ -7,6 +7,8 @@ using System.Windows.Data;
 using System.Windows.Markup;
 using System.Windows.Media;
 
+using FontAwesome5.Extensions;
+
 namespace FontAwesome5.Converters
 {
     /// <summary>
@@ -25,9 +27,11 @@ namespace FontAwesome5.Converters
 
 
             if (parameter is not Brush brush)
+            {
                 brush = Brushes.Black;
+            }
 
-            return ImageAwesome.CreateImageSource((EFontAwesomeIcon)value, brush);
+            return ((EFontAwesomeIcon)value).CreateImageSource(brush);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

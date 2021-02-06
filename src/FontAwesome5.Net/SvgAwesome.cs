@@ -252,53 +252,8 @@ namespace FontAwesome5
             }
             else
             {
-                svgAwesome.Child = CreatePath(svgAwesome.Icon, svgAwesome.Foreground);
+                svgAwesome.Child = svgAwesome.Icon.CreateUiElement(svgAwesome.Foreground);
             }
-        }
-
-        /// <summary>
-        /// Creates a new System.Windows.Media.ImageSource of a specified FontAwesomeIcon and foreground System.Windows.Media.Brush.
-        /// </summary>
-        /// <param name="icon">The FontAwesome icon to be drawn.</param>
-        /// <param name="foregroundBrush">The System.Windows.Media.Brush to be used as the foreground.</param>
-        /// <param name="emSize">The font size in em.</param>
-        /// <returns>A new System.Windows.Media.ImageSource</returns>
-        public static UIElement CreatePath(EFontAwesomeIcon icon, Brush foregroundBrush, double emSize = 100)
-        {
-            if (icon.GetSvg(out var strPath, out var width, out var height))
-            {
-                var path = new Path();
-                path.Data = Geometry.Parse(strPath);
-                path.Width = width;
-                path.Height = height;
-                path.Fill = foregroundBrush;
-
-                return path;
-            }
-            else if (icon.GetDuotoneSvg(out var strPath1, out var strPath2, out var opacity1, out width, out height))
-            {
-                var path1 = new Path();
-                path1.Data = Geometry.Parse(strPath1);
-                path1.Width = width;
-                path1.Height = height;
-                path1.Fill = foregroundBrush;
-                path1.Opacity = opacity1;
-
-                var path2 = new Path();
-                path2.Data = Geometry.Parse(strPath2);
-                path2.Width = width;
-                path2.Height = height;
-                path2.Fill = foregroundBrush;
-
-                var canvas = new Canvas();
-                canvas.Width = width;
-                canvas.Height = height;
-                canvas.Children.Add(path1);
-                canvas.Children.Add(path2);
-
-                return canvas;
-            }
-            return null;          
         }
     }
 }

@@ -81,10 +81,18 @@ namespace FontAwesome5
         {
 #if NET40
             d.SetValue(TextOptions.TextRenderingModeProperty, TextRenderingMode.ClearType);
-#endif      
-            d.SetValue(FontFamilyProperty, ((EFontAwesomeIcon)e.NewValue).GetFontFamily());
+#endif
+            var icon = ((EFontAwesomeIcon)e.NewValue);
+            d.SetValue(FontFamilyProperty, icon.GetFontFamily());
             d.SetValue(TextAlignmentProperty, TextAlignment.Center);
-            d.SetValue(TextProperty, ((EFontAwesomeIcon)e.NewValue).GetUnicode());
+            if (icon.GetStyle() == EFontAwesomeStyle.Duotone)
+            {
+                d.SetValue(TextProperty, "Duotone icons only work as SvgAwesome or ImageAwesome.");
+            }
+            else 
+            {
+                d.SetValue(TextProperty, icon.GetUnicode());
+            }
         }
 
         /// <summary>

@@ -15,20 +15,19 @@ namespace FontAwesome5.Converters
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (!(value is EFontAwesomeIcon))
-                return null;
-
-            var icon = (EFontAwesomeIcon)value;
-            var info = icon.GetInformationAttribute<FontAwesomeInformationAttribute>();
-            if (info == null)
-                return null; 
-
-            if (parameter is string format && !string.IsNullOrEmpty(format))
+            if (value is not EFontAwesomeIcon)
             {
-                return string.Format(format, info.Label, info.Style);
+                return null;
             }
 
-            return info.Label;
+            var icon = (EFontAwesomeIcon)value;
+            var info = icon.GetInformation();
+            if (info == null)
+            {
+                return null;
+            }
+
+            return parameter is string format && !string.IsNullOrEmpty(format) ? string.Format(format, info.Label, info.Style) : info.Label;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

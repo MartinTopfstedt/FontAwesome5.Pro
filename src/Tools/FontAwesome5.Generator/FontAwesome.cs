@@ -109,7 +109,7 @@ namespace FontAwesome5.Generator
 
             public override SVG ReadJson(JsonReader reader, Type objectType, SVG existingValue, bool hasExistingValue, JsonSerializer serializer)
             {
-                JObject jo = JObject.Load(reader);
+                var jo = JObject.Load(reader);
 
                 SVG svg = null;
 
