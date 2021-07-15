@@ -113,7 +113,7 @@ namespace FontAwesome5.Generator
             WriteLine("{");
             PushIndent("\t");
 
-            WriteLine("internal static class FontAwesome");
+            WriteLine("internal static class FontAwesomeInternal");
             WriteLine("{");
             PushIndent("\t");
             WriteLine("public static Dictionary<EFontAwesomeIcon, FontAwesomeInformation> Information = new Dictionary<EFontAwesomeIcon, FontAwesomeInformation>() {");
@@ -223,7 +223,7 @@ namespace FontAwesome5.Generator
             PopIndent();
             WriteLine("}");
 
-            var outputFile = Path.Combine(inputDirectory, @"src\FontAwesome5\FontAwesome.cs");
+            var outputFile = Path.Combine(inputDirectory, @"src\FontAwesome5\FontAwesomeInternal.cs");
             File.WriteAllText(outputFile, _content.ToString());
         }
 

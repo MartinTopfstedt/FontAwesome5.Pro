@@ -24778,13 +24778,13 @@ namespace FontAwesome5
 		Brands_Viacoin,
 		
 		/// <summary>
-		/// Video
+		/// Viadeo
 		/// </summary>
 		///<see href="http://fontawesome.com/icons/viadeo?style=brands" />
 		Brands_Viadeo,
 		
 		/// <summary>
-		/// Video Square
+		/// Viadeo Square
 		/// </summary>
 		///<see href="http://fontawesome.com/icons/viadeo-square?style=brands" />
 		Brands_ViadeoSquare,
